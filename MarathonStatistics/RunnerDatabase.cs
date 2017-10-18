@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace MarathonStatistics
 {
-    public class RunnerDatabase
-    {
+	public class RunnerDatabase
+	{
 		public RunnerDatabase(List<MarathonRecord> data)
 		{
 			dataset = data;
@@ -41,5 +41,5 @@ namespace MarathonStatistics
 		{
 			throw new NotImplementedException();
 		}
-    }
+	}
 }

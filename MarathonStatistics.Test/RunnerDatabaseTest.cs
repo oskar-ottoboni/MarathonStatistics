@@ -4,9 +4,9 @@ using System;
 
 namespace MarathonStatistics.Test
 {
-    [TestClass]
-    public class RunnerDatabaseTest
-    {
+	[TestClass]
+	public class RunnerDatabaseTest
+	{
 
 		private List<MarathonRecord> testData = new List<MarathonRecord> {
 			new MarathonRecord(){Name = "Rachele Cann", Date = new DateTime(2015,05,12), Time = new TimeSpan(3,23,12)},
@@ -37,39 +37,39 @@ namespace MarathonStatistics.Test
 
 		private RunnerDatabase runnerDatabase;
 
-        [TestInitialize]
-        public void Init(){
-            runnerDatabase = new RunnerDatabase(testData);
-        }
+		[TestInitialize]
+		public void Init(){
+			runnerDatabase = new RunnerDatabase(testData);
+		}
 
-        [TestCleanup]
-        public void Cleanup(){
-            runnerDatabase = null;
-        }
+		[TestCleanup]
+		public void Cleanup(){
+			runnerDatabase = null;
+		}
 
-
-        [DataTestMethod]
-		[DataRow("2017-01-01", "2017-12-31", "Rey Burrows was the fastest on 24 March 2017 with the time 03:01:07")]
-        [DataRow("2016-01-01", "2016-12-31", "Rachele Cann was the fastest on 14 February 2016 with the time 02:55:43")]
-		[DataRow("2015-01-01", "2015-12-31", "Heidy Large was the fastest on 2 May 2015 with the time 03:05:19")]
-		public void GetFastestRunSumaryTest(string from, string to, string expected)
-        {
-			Assert.AreEqual(expected, runnerDatabase.GetFastestRunSumary(DateTime.Parse(from), DateTime.Parse(to)));
-        }
 
 		[DataTestMethod]
-        [DataRow("Pablo Pankow", "3:20:30")]
+		[DataRow("2017-01-01", "2017-12-31", "Rey Burrows was the fastest on 24 March 2017 with the time 03:01:07")]
+		[DataRow("2016-01-01", "2016-12-31", "Rachele Cann was the fastest on 14 February 2016 with the time 02:55:43")]
+		[DataRow("2015-01-01", "2015-12-31", "Heidy Large was the fastest on 2 May 2015 with the time 03:05:19")]
+		public void GetFastestRunSumaryTest(string from, string to, string expected)
+		{
+			Assert.AreEqual(expected, runnerDatabase.GetFastestRunSumary(DateTime.Parse(from), DateTime.Parse(to)));
+		}
+
+		[DataTestMethod]
+		[DataRow("Pablo Pankow", "3:20:30")]
 		[DataRow("pablo pankow ", "3:20:30")]
 		[DataRow("Heidy Large", "3:20:18")]
 		[DataRow("Shakira", "3:50:03")]
-        public void GetAvrageTimeForRunnerAsStringTest(string name, string expected)
-        {
+		public void GetAvrageTimeForRunnerAsStringTest(string name, string expected)
+		{
 			Assert.AreEqual(expected, runnerDatabase.GetAvrageTimeForRunnerAsString(name));
-        }
+		}
 
 
 		[DataTestMethod]
-        [DataRow(2017, "Rihanna ran 3 marathons in 2017")]
+		[DataRow(2017, "Rihanna ran 3 marathons in 2017")]
 		[DataRow(2016, "Troy and Heidy ran 2 marathons in 2016")]
 		[DataRow(2015, "Troy ran 2 marathons in 2015")]
 		public void GetRunnerWithMostRunsSummaryTest(int year, string expected)
@@ -77,5 +77,5 @@ namespace MarathonStatistics.Test
 			Assert.AreEqual(expected, runnerDatabase.GetRunnerWithMostRunsSummary(year));
 		}
 
-    }
+	}
 }

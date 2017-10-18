@@ -4,8 +4,8 @@ using System.Text;
 
 namespace MarathonStatistics
 {
-    public class  MarathonRecord
-    {
+	public class  MarathonRecord
+	{
 		/// <summary>
 		/// Name of the runner
 		/// </summary>
@@ -21,5 +21,5 @@ namespace MarathonStatistics
 		/// </summary>
 		public TimeSpan Time { get; set; }
 
-    }
+	}
 }
