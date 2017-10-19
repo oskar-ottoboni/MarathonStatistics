@@ -1,3 +1,3 @@
-# MarathonStatistics
+# Marathon Statistics
 
-Implement the methods GetFastestRunSumary, GetAvrageTimeForRunnerAsString and GetRunnerWithMostRunsSummary so that all unit tests pass
+Implement the methods **GetFastestRunSumary**, **GetAvrageTimeForRunnerAsString** and **GetRunnerWithMostRunsSummary** in MarathonStatistics/RunnerDatabase.cs so that all unit tests pass
